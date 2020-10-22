@@ -6,7 +6,7 @@
 /*   By: sescobar <sescobar@student.42madrid.>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 10:59:54 by sescobar          #+#    #+#             */
-/*   Updated: 2020/10/22 11:00:03 by sescobar         ###   ########.fr       */
+/*   Updated: 2020/10/22 11:27:33 by sescobar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,6 @@ const char	*ft_printchar(const char *str, va_list args, int **count,
 			ft_putchar_fd(' ', 1);
 			i++;
 			(*(*count))++;
-	}
-return (str);
+		}
+	return (str);
 }

@@ -6,7 +6,7 @@
 /*   By: sescobar <sescobar@student.42madrid.>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/21 10:35:52 by sescobar          #+#    #+#             */
-/*   Updated: 2020/10/21 10:35:55 by sescobar         ###   ########.fr       */
+/*   Updated: 2020/10/22 11:28:17 by sescobar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int			ft_isnum(int c)
 char		*ft_strtoupper(char *str)
 {
 	int	c;
-	
+
 	c = 0;
 	while (*str != '\0')
 	{
@@ -57,4 +57,3 @@ char		*ft_strtoupper(char *str)
 	}
 	return (str - c);
 }
-

@@ -6,13 +6,13 @@
 /*   By: sescobar <sescobar@student.42madrid.>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/21 10:40:01 by sescobar          #+#    #+#             */
-/*   Updated: 2020/10/21 10:40:03 by sescobar         ###   ########.fr       */
+/*   Updated: 2020/10/22 11:30:02 by sescobar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_prespace(t_flags **flags, size_t length, int count, char filler)
+int			ft_prespace(t_flags **flags, size_t length, int count, char filler)
 {
 	int	t;
 	int	dif;
@@ -40,11 +40,11 @@ int	ft_prespace(t_flags **flags, size_t length, int count, char filler)
 	return (count);
 }
 
-int	ft_uintlength(unsigned long long int n)
+int			ft_uintlength(unsigned long long int n)
 {
 	if (n < 10)
 		return (1);
-        else
+	else
 		return (ft_uintlength(n / 10) + 1);
 }
 
@@ -52,7 +52,7 @@ char		*ft_uitoa(unsigned long long int n)
 {
 	char	*str;
 	int		len;
-	
+
 	len = ft_uintlength(n);
 	str = ft_calloc(len + 1, sizeof(char));
 	if (len == 0)
@@ -66,4 +66,3 @@ char		*ft_uitoa(unsigned long long int n)
 	}
 	return (str);
 }
-
