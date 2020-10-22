@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printchar.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bazuara <bazuara@student.42madrid.>        +#+  +:+       +#+        */
+/*   By: sescobar <sescobar@student.42madrid.>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/12 16:29:52 by bazuara           #+#    #+#             */
-/*   Updated: 2020/10/21 11:04:18 by sescobar         ###   ########.fr       */
+/*   Created: 2020/10/22 10:59:54 by sescobar          #+#    #+#             */
+/*   Updated: 2020/10/22 11:00:03 by sescobar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,6 @@ const char	*ft_printchar(const char *str, va_list args, int **count,
 			ft_putchar_fd(' ', 1);
 			i++;
 			(*(*count))++;
-		}
-	return (str);
+	}
+return (str);
 }

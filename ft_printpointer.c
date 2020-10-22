@@ -6,7 +6,7 @@
 /*   By: sescobar <sescobar@student.42madrid.>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/21 09:47:05 by sescobar          #+#    #+#             */
-/*   Updated: 2020/10/21 10:18:41 by sescobar         ###   ########.fr       */
+/*   Updated: 2020/10/22 11:07:22 by sescobar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 char		*applyprecission_pointer(char *hex, t_flags **flags)
 {
-	char	*filler;
+	char	*temp;
 
 	if ((*flags)->precission >= ft_strlen(hex) && (*flags)->precission > 0)
 	{
-		filler = ft_calloc((*flags)->precission - ft_strlen(hex) +
+		temp = ft_calloc((*flags)->precission - ft_strlen(hex) +
 				1, sizeof(char));
-		ft_memset(filler, '0', (*flags)->precission - ft_strlen(hex));
-		hex = ft_strjoin_free(filler, hex, 3);
+		ft_memset(temp, '0', (*flags)->precission - ft_strlen(hex));
+		hex = ft_strjoin_free(temp, hex, 3);
 	}
 	hex = ft_strjoin_free("0x", hex, 2);
 	return (hex);
@@ -29,17 +29,17 @@ char		*applyprecission_pointer(char *hex, t_flags **flags)
 
 char		*applywidth_pointer(char *hex, t_flags **flags)
 {
-	char	*filler;
+	char	*temp;
 
 	if ((*flags)->width > ft_strlen(hex))
 	{
-		filler = ft_calloc((*flags)->width - ft_strlen(hex) + 1, sizeof(char));
-		ft_memset(filler, ((*flags)->zero == 1 ? '0' : ' '),
+		temp = ft_calloc((*flags)->width - ft_strlen(hex) + 1, sizeof(char));
+		ft_memset(temp, ((*flags)->zero == 1 ? '0' : ' '),
 				(*flags)->width - ft_strlen(hex));
 		if ((*flags)->minus == 0)
-			hex = ft_strjoin_free(filler, hex, 3);
+			hex = ft_strjoin_free(temp, hex, 3);
 		else
-			hex = ft_strjoin_free(hex, filler, 3);
+			hex = ft_strjoin_free(hex, temp, 3);
 	}
 	return (hex);
 }

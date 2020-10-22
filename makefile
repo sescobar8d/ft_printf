@@ -6,7 +6,7 @@
 #    By: sescobar <sescobar@student.42madrid.>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/21 09:48:30 by sescobar          #+#    #+#              #
-#    Updated: 2020/10/21 11:01:01 by sescobar         ###   ########.fr        #
+#    Updated: 2020/10/22 10:53:31 by sescobar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,40 +77,20 @@ LFLAGS = -c
 
 all: $(NAME)
 
-# Rule to build your object files and link them into a binary
 $(NAME):
 	@gcc $(CFLAGS) $(LFLAGS) $(LIBSOURCE)
 	@mv -f *.o src/lib
 	@gcc $(CFLAGS) $(LFLAGS) $(SOURCE)
 	@ar rc $(LNAME) $(OBJ) $(LIBOBJ)
 	@ranlib $(LNAME)
-	@echo "Compiled '$(NAME)' successfully"
+	@echo "'$(NAME)' Compilada correctamente"
 
-# Rule to remove object files
 clean:
 	@rm -f $(LIBOBJ) $(LBONUSSRC) $(OBJ) $(LIBOBJ) src/lib/*.o
-	@echo "Cleaned objects successfully"
+	@echo "Borrado completado"
 
-# Rule to remove binary, calls the 'clean' rule first
 fclean: clean
 	@rm -f $(LNAME)
-	@echo "Removed '$(LNAME)' with success"
+	@echo "'$(LNAME)' Eliminada correctamente"
 
-# Rule to remove object files and binary, then re-build everything
 re: fclean all
-
-test: fclean 
-	@clear
-	@echo "Enabling debug\n"
-	@sed -i '' 's/debug = 0/debug = 1/g' ft_printf.c
-	@echo "Testing...\n"
-	@gcc -g  *.c ./src/lib/*.c ./test/main.c
-	@echo "\ntest result:"
-	@./a.out
-	@echo "\n"
-	@echo "Disabling debug\n"
-	@sed -i '' 's/debug = 1/debug = 0/g' ft_printf.c
-
-
-# Rules that are not linked with a filename should be listed here
-.PHONY: all clean fclean re
